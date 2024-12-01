@@ -1,5 +1,3 @@
-from pathlib import Path
-
 def total_salary(path_to_file):
 	all_salary = 0
 	aver_salary = 0
@@ -23,7 +21,9 @@ def total_salary(path_to_file):
 	except Exception as e:
 		return f"Сталася помилка: {e}"
 	
-	return f"Загальна сума заробітної плати: {all_salary}, Середня заробітна плата: {aver_salary:.0f}"
+	return all_salary, aver_salary
+	#return f"Загальна сума заробітної плати: {all_salary}, Середня заробітна плата: {aver_salary:.0f}"
 
 
-print(total_salary("/Users/a7/Documents/Go_IT/Repozitories/goit-algo-hw-04/task_1/mounth__salary.txt"))
+total, average = total_salary("/Users/a7/Documents/Go_IT/Repozitories/goit-algo-hw-04/task_1/mounth__salary.txt")
+print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average:.0f}")
